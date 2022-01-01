@@ -35,3 +35,16 @@ const promise = new Promise((resolve) => {
 resolveに渡した文字列を次に呼ばれるメソッドの第一引数に渡すことができる
 
 ### reject
+```js
+const promise = new Promise((resolve, reject) => {
+  reject();
+})
+  .then(() => {
+    console.log("resolveしたよ");
+  })
+  .catch(() => {
+    console.log("rejectしたよ");
+  });
+```
+thenの処理は実行されずにcatchの処理が実行される
+catchにて実行される関数がreturnした場合resolveする
