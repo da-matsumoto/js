@@ -18,3 +18,20 @@ JavaScriptは非同期言語
     - 拒否
     - 処理が失敗に終わってしまった状態
     - catchに書かれた処理が実行される
+### Promiseの書き方
+```js
+const promise = new Promise((resolve, reject) => {});
+```
+Promiseの引数には関数を渡す
+第一引数はresolve、第二引数はreject
+#### resolve関数に引数
+```js
+const promise = new Promise((resolve) => {
+  resolve('resolveしたよ');
+}).then((val) => {
+  console.log(val);
+});
+```
+resolveに渡した文字列を次に呼ばれるメソッドの第一引数に渡すことができる
+
+### reject
