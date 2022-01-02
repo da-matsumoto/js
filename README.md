@@ -50,3 +50,22 @@ thenの処理は実行されずにcatchの処理が実行される
 catchにて実行される関数がreturnした場合resolveする
 
 ### Promiseのメソッドチェーン
+```js
+const promise = new Promise((resolve, reject) => {
+  resolve("test");
+})
+  .then((val) => {
+    console.log(`then1: ${val}`);
+    return val;
+  })
+  .catch((val) => {
+    console.log(`catch: ${val}`);
+    return val;
+  })
+  .then((val) => {
+    console.log(`then2: ${val}`);
+  });
+```
+### Promise.all
+Promise.all()は配列でPromiseオブジェクトを渡し、すべてのPromiseオブジェクトがresolvedになったら次の処理に進む。
+
