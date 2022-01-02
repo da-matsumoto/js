@@ -48,3 +48,5 @@ const promise = new Promise((resolve, reject) => {
 ```
 thenの処理は実行されずにcatchの処理が実行される
 catchにて実行される関数がreturnした場合resolveする
+
+### Promiseのメソッドチェーン
