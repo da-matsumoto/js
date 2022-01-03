@@ -91,3 +91,13 @@ Promise.all([promise1, promise2]).then(() => {
 ```
 ### Promise.race
 Promise.race()は配列でPromiseオブジェクトを渡し、どれか一つのPromiseオブジェクトがresolvedになったら次に進む。
+
+### async/await
+#### async
+asyncは非同期関数を定義する関数宣言
+関数の頭につけることでPromiseオブジェクトを返す関数にすることができる。
+async functionが値をreturnした場合、Promiseは戻り値をresolveし、その値はPromiseValueとして扱われる。
+#### await
+awaitはPromiseオブジェクトが値を返すのを待つ演算子
+awaitは必ずasync function内で使う
+
