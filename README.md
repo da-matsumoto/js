@@ -68,4 +68,26 @@ const promise = new Promise((resolve, reject) => {
 ```
 ### Promise.all
 Promise.all()は配列でPromiseオブジェクトを渡し、すべてのPromiseオブジェクトがresolvedになったら次の処理に進む。
+```js
+const promise1 = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve();
+  }, 1000);
+}).then(() => {
+  console.log("promise1が終わった");
+});
 
+const promise2 = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve();
+  }, 3000);
+}).then(() => {
+  console.log("promise2が終わった");
+});
+
+Promise.all([promise1, promise2]).then(() => {
+  console.log("全部終わった");
+});
+```
+### Promise.race
+Promise.race()は配列でPromiseオブジェクトを渡し、どれか一つのPromiseオブジェクトがresolvedになったら次に進む。
